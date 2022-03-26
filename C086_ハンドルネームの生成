@@ -12,18 +12,18 @@ class Program
     {
         var name = Console.ReadLine();
         char[] charName = name.ToCharArray();
+        string handleName = "";
         for (int i = 0; i < charName.Length; i++)
         {
             if (charName[i] == 'a' || charName[i] == 'i' || charName[i] == 'u' || charName[i] == 'e' || charName[i] == 'o')
             {
-                Console.Write("");
+                handleName += "";
             }
             else
             {
-                Console.Write(charName[i]);
+                handleName += charName[i];
             }
         }
-        
-        Console.WriteLine("");
+        Console.WriteLine(handleName);
     }
 }
