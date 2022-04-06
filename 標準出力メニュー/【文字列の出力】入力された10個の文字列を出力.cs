@@ -10,7 +10,7 @@ class Program
     static void Main()
     {
         var line = Console.ReadLine();
-        List<string> strs = new List<string>(line.Split(' '));
-        strs.ForEach(str => Console.WriteLine(str));
+        var strs = line.Split(' ');   //Listを配列に変更
+        Array.ForEach(strs, str => Console.WriteLine(str));  //ListでないとForEachが使えないため、Array.ForEachに変更
     }
 }

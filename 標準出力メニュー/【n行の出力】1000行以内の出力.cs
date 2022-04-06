@@ -1,15 +1,15 @@
 //数値 N が入力されます。1 から N までの数値をすべて、改行区切りで出力してください。
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        // 自分の得意な言語で
-        // Let's チャレンジ！！
         var number = int.Parse(Console.ReadLine());
-        for (int i = 0; i + 1 <= number; i++)
+        for (int i = 0; i < number; i++)  //条件式の加工を＜に置き換えることで回避
         {
             Console.WriteLine(i + 1);
         }

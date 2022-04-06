@@ -6,9 +6,9 @@ class Program
 {
     static void Main()
     {
-        for (int i = 1; i <= 1000; i++)
+        for (int i = 0; i < 1000; i++)  //0-indexedに修正
         {
-            Console.WriteLine(i);
+            Console.WriteLine(i + 1);
         }
     }
 }
