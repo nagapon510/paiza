@@ -2,18 +2,19 @@
 //ただし、末尾に半角スペースを出力してはいけません。
 
 using System;
+using System.Text;
 
 class Program
 {
     static void Main()
     {
-        string numbers = "";
+        StringBuilder numbers = new StringBuilder("");
         for (int i = 1; i <= 1000; i++)
         {
-            numbers += i;
+            numbers.Append(i);
             if (i < 1000)
             {
-                numbers += " ";
+                numbers.Append(" ");
             }
         }
         Console.WriteLine(numbers);

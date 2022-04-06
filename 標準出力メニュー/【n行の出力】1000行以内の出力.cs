@@ -9,9 +9,9 @@ class Program
         // 自分の得意な言語で
         // Let's チャレンジ！！
         var number = int.Parse(Console.ReadLine());
-        for (int i = 1; i <= number; i++)
+        for (int i = 0; i + 1 <= number; i++)
         {
-            Console.WriteLine(i);
+            Console.WriteLine(i + 1);
         }
     }
 }

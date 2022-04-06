@@ -5,6 +5,7 @@
 大文字( "A", "E", "I", "O", "U" )を指し、子音とはそれ以外のアルファベットを意味します。*/
 
 using System;
+using System.Text;
 
 class Program
 {
@@ -12,16 +13,16 @@ class Program
     {
         var name = Console.ReadLine();
         char[] charName = name.ToCharArray();
-        string handleName = "";
+        StringBuilder handleName = new StringBuilder("");
         for (int i = 0; i < charName.Length; i++)
         {
             if (charName[i] == 'a' || charName[i] == 'i' || charName[i] == 'u' || charName[i] == 'e' || charName[i] == 'o')
             {
-                handleName += "";
+                handleName.Append("");
             }
             else
             {
-                handleName += charName[i];
+                handleName.Append(charName[i]);
             }
         }
         Console.WriteLine(handleName);

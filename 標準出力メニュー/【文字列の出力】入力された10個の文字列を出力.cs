@@ -2,16 +2,15 @@
 //これらの文字列をすべて、改行区切りで出力してください。
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
         var line = Console.ReadLine();
-        string[] strs = line.Split(' ');
-        foreach (var str in strs)
-        {
-            Console.WriteLine(str);
-        }
+        List<string> strs = new List<string>(line.Split(' '));
+        strs.ForEach(str => Console.WriteLine(str));
     }
 }
