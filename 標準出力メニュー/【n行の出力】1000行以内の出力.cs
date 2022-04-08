@@ -9,9 +9,6 @@ class Program
     static void Main()
     {
         var number = int.Parse(Console.ReadLine());
-        for (int i = 0; i < number; i++)  //条件式の加工を＜に置き換えることで回避
-        {
-            Console.WriteLine(i + 1);
-        }
+        Enumerable.Range(1, number).ToList().ForEach(x => Console.WriteLine(x)); //1～NまでのリストにしてForEachで出力
     }
 }

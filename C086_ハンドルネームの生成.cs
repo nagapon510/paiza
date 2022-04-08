@@ -5,23 +5,21 @@
 大文字( "A", "E", "I", "O", "U" )を指し、子音とはそれ以外のアルファベットを意味します。*/
 
 using System;
-using System.Text;
+using System.Linq;
 
 class Program
 {
     static void Main()
     {
         var name = Console.ReadLine();
-        char[] charName = name.ToCharArray();
-        StringBuilder handleName = new StringBuilder();  //初期化時の空文字の除外
-        for (int i = 0; i < charName.Length; i++)
-        {
-            if (charName[i] == 'a' || charName[i] == 'i' || charName[i] == 'u' || charName[i] == 'e' || charName[i] == 'o')
-            {
-                continue;  //条件を満たす場合は何も処理をせずに返す。
-            }
-            handleName.Append(charName[i]);   //今回の場合elseでの分岐は不要。
-        }
-        Console.WriteLine(handleName);
+
+        //入力値がnullだったらそのまま処理終了（早期リターン）
+        if (name == null) return;
+
+        //nameを1文字単位で分割して配列に代入⇒whereで子音を抽出⇒ToListで配列を子音に変換
+        var ret = name.ToCharArray().Where(x => x != 'a' && x != 'i' && x != 'u' && x != 'e' && x != 'o').ToList();
+
+        //区切り文字なしでリストの文字列を結合
+        Console.WriteLine(String.Join("",ret));
     }
 }

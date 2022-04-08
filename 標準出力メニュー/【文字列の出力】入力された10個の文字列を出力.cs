@@ -11,6 +11,6 @@ class Program
     {
         var line = Console.ReadLine();
         var strs = line.Split(' ');   //Listを配列に変更
-        Array.ForEach(strs, str => Console.WriteLine(str));  //ListでないとForEachが使えないため、Array.ForEachに変更
+        strs.ToList().ForEach(str => Console.WriteLine(str));  //ListでないとForEachが使えないため、ToList()でリストに変換してからForEach
     }
 }
