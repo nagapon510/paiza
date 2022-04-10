@@ -12,7 +12,7 @@ class Program
     {
         StringBuilder numbers = new StringBuilder();
 
-        //1～1000の整数をリストにする ⇒ x+1と半角スペースをnumbersに連結 ⇒ Foreachで1000までループ
+        //0を起点に1000個の整数をリストにする ⇒ x+1と半角スペースをnumbersに連結 ⇒ Foreachでループ
         Enumerable.Range(0,1000).ToList().ForEach(x => numbers.Append(x+1).Append(" ")); 
 
         //numbersを文字列に変換してから引数なしのTrimで末尾の空白を削除
