@@ -10,12 +10,8 @@ class Program
 {
     static void Main()
     {
-        StringBuilder numbers = new StringBuilder();
-
-        //0を起点に1000個の整数をリストにする ⇒ x+1と半角スペースをnumbersに連結 ⇒ Foreachでループ
-        Enumerable.Range(0,1000).ToList().ForEach(x => numbers.Append(x+1).Append(" ")); 
-
-        //numbersを文字列に変換してから引数なしのTrimで末尾の空白を削除
-        Console.WriteLine(numbers.ToString().Trim());
+        //0-999までの値を+1してリスト化(1-1000) ⇒ リストの値を半角スペースを区切り文字にして連結
+        var ret = String.Join(" ", Enumerable.Range(0, 1000).Select(x => x+1).ToList());
+        Console.WriteLine(ret);
     }
 }
