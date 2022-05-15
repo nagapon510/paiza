@@ -4,10 +4,12 @@
 # スペース区切りで月と日が与えられるのでゾロ目の日であれば "Yes" そうでなければ "No" と出力してください。
 
 day = input().split(' ')
-month = list(day[0])
-day = list(day[1])
 
-if set(month) == set(day):
+# string型が既にcharの配列のためリストに変更する必要なし
+# month = list(day[0])
+# day = list(day[1])
+
+if set(day[0]) == set(day[1]):
     print("Yes")
 else:
     print("No")

@@ -14,7 +14,9 @@
 # 
 # と出力してください。
 
-strs = list(input())
+
+# string型が既にcharの配列のためリストに変更する必要なし
+strs = input()
 ret = []
 
 for i in range(len(strs)):

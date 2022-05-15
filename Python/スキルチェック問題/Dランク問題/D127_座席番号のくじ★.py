@@ -4,7 +4,10 @@
 # 
 # 例えば入力される入場券の文字列が、"S123" の場合はもらえないので　"No"、"P777" の場合はプレゼントがもらえるので "Yes" を出力してください。
 
-strs = list(input())
+
+# string型が既にcharの配列のためリストに変更する必要なし
+strs = input()
+
 if len(set(strs)) == 2:
     print("Yes")
 else:

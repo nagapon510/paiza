@@ -9,9 +9,10 @@
 # 
 # tmg
 
-strs = list(input())
+# string型が既にcharの配列のためリストに変更する必要なし
+strs = input()
 abb = []
-print(strs)
+
 for x in strs:
     if x != "a" and  x != "e" and  x != "i" and x != "o" and  x != "u":
         abb.append(x)
