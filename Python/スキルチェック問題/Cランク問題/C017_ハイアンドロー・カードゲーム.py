@@ -9,15 +9,26 @@
 # ・1つ目の番号が同じ場合、2つ目の番号が小さいカードのほうが強い
 # 
 # 親カードと子カードの情報が与えられるので、それらの強弱関係を調べるプログラムを作成してください。
+# 
+# 入力は以下のフォーマットで与えられます。
+# 
+# a b
+# n
+# A_1 B_1
+# …
+# A_n B_n
+# 
+# 1行目では親カードの情報が与えられます。親カードの1つ目の番号は a、2つ目の番号は b で表されます。
+# 2行目では整数 n が与えられます。
+# 3行目から n 行の入力が続き、各行では、子カード i (1 ≦ i ≦ n)の情報が与えられます。
+# 子カード i の1つ目の番号は A_i、2つ目の番号は B_i で表されます。
 
-oya = input().split(' ')
+parent_a, parent_b = map(int, input().split(' '))
 n = int(input())
 
 for i in range(n):
-    child = input().split(' ')
-    if int(oya[0]) > int(child[0]):
-        print("High")
-    elif int(oya[0]) == int(child[0]) and int(oya[1]) < int(child[1]):
+    child_a, child_b = map(int, input().split(' '))
+    if (parent_a > child_a) or (parent_a == child_a and parent_b < child_b):
         print("High")
     else:
         print("Low")

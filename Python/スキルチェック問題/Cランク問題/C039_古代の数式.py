@@ -21,9 +21,5 @@
 # → 17 + 31 + 4 = 52
 
 nums = input().split('+')
-
-ret = 0
-for i in range(len(nums)):
-    ret += (nums[i].count('<') * 10) + nums[i].count('/')
-
-print(ret)
+ret = [(nums[i].count('<') * 10) + nums[i].count('/') for i in range(len(nums))]
+print(sum(ret))

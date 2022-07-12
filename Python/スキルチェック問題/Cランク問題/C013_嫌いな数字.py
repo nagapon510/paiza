@@ -13,14 +13,11 @@
 n = input()
 m = int(input())
 
-desired_rooms = []
-for i in range(m):
-    room = input()
-    if n not in room:
-        desired_rooms.append(room)
+# リスト内包表記に変更
+rooms = [input() for i in range(m)]
+desired_rooms = [room for room in rooms if n not in room]
 
+# 記載方法を簡略化
 if len(desired_rooms) == 0:
-    print("none")
-else:
-    for desired_room in desired_rooms:
-        print(desired_room)
+    desired_rooms = ["none"]
+print('\n'.join(desired_rooms))

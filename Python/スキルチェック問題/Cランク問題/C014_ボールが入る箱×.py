@@ -15,10 +15,15 @@
 # 
 # それぞれの値は文字列で標準入力から渡されます。
 
-num = input().split(' ')
-for i in range(int(num[0])):
+n, r = map(int,input().split(' '))
+ret = []
+
+for i in range(int(n)):
     box = input().split(' ')
     for j in range(len(box)):
         box[j] = int(box[j])
-    if int(num[1]) <= min(box):
-        print(i + 1)
+    if int(r * 2) <= min(box):  #半径×2に修正
+        ret.append(i + 1)
+
+# 最後にまとめて出力する仕様に変更
+print('\n'.join(map(str,ret)))

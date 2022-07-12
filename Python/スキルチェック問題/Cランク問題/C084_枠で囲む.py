@@ -13,6 +13,8 @@
 # +++++++
 
 s = input()
-print("+" * (len(s) + 2))
+frame = "+" * (len(s) + 2)
+
+print(frame)
 print(f"+{s}+")
-print("+" * (len(s) + 2))
+print(frame)

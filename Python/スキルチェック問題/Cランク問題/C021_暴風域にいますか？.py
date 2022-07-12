@@ -10,12 +10,12 @@
 # 
 # 台風の情報と複数の人の座標が与えられるので、それぞれの人に対し、暴風域にいるかどうかを判定してください。
 
-num = input().split(' ')
+xc, yc, r_1, r_2 = map(int,input().split(' '))
 n = int(input())
 
 for i in range(n):
-    radius = input().split(' ')
-    if int(num[2]) ** 2 <= ((int(radius[0]) - int(num[0])) ** 2) + ((int(radius[1]) - int(num[1])) ** 2) <= int(num[3]) ** 2:
+    x, y = map(int, input().split(' '))
+    if r_1 ** 2 <= ((x - xc) ** 2) + ((y - yc) ** 2) <= r_2 ** 2:
         print("yes")
     else:
         print("no")

@@ -15,9 +15,5 @@ winnums = input().split(' ')
 n = int(input())
 
 for i in range(n):
-    win = 0
     ordernums = input().split(' ')
-    for ordernum in ordernums:
-        if ordernum in winnums:
-            win += 1
-    print(win)
+    print(len([ordernum for ordernum in ordernums if ordernum in winnums]))

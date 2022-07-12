@@ -6,8 +6,8 @@
 # さて、m[kg] 仕入れたこの食品は最終的に何kg 売れ残ったでしょうか。
 # ただし、生鮮食品をお総菜にする際は、量を変えることなく調理できるものとします。
 
-nums = input().split(' ')
+m, p, q = map(int, input().split(' '))
 
-sozai = int(nums[0]) * ((100 - int(nums[1])) / 100)
-unsold = sozai * ((100 - int(nums[2])) / 100)
+sozai = m * ((100 - p) / 100)
+unsold = sozai * ((100 - q) / 100)
 print(unsold)

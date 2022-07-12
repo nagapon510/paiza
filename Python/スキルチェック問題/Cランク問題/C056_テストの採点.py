@@ -10,8 +10,10 @@
 # 学籍番号 1 ではテストの点数が 80 点で欠席回数が 11 回なので 成績は 25 点となり合格点以上となっています。
 # 同様にして、成績を計算すると合格点を超えている学生の学籍番号は 1, 3, 4 となります。
 
-num = input().split(' ')
-for i in range(int(num[0])):
-    test_result = input().split(' ')
-    if int(num[1]) <= int(test_result[0]) - (int(test_result[1]) * 5) or int(num[1]) == 0:
-        print(i + 1)
+num_student, pass_score = map(int, input().split(' '))
+absent_penalty = 5
+
+for i in range(1, num_student + 1):
+    score, num_absent = map(int, input().split(' '))
+    if pass_score <= max(score - (num_absent * absent_penalty), 0):  # マイナスの場合0の方が大きくなるので0を返す
+        print(i)

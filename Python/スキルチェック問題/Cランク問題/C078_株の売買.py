@@ -9,19 +9,22 @@
 # N 日目に持ち株をすべて売ったあとでの損益を出力してください。
 # ただし、入力例 2 のように損益がマイナスになる場合があることに注意してください。
 
-num = input().split(' ')
+days, limit_buy, limit_sell = map(int, input().split(' '))
 profit = 0
 hold = 0
-for i in range(int(num[0])):
+
+for i in range(days - 1):
     price = int(input())
-    if i+1 == int(num[0]):
-        profit += price * hold
-        hold = 0
-    elif price <= int(num[1]):
+    if price <= limit_buy:
         profit -= price
         hold += 1
-    elif price >= int(num[2]):
+    elif limit_sell <= price:
         profit += price * hold
         hold = 0
+
+# 最終日処理を外出し
+price = int(input())
+profit += price * hold
+hold = 0
 
 print(profit)
