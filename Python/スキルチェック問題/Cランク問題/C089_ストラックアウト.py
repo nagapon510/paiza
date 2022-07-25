@@ -7,19 +7,16 @@
 # ゲーム終了後には、それぞれのパネルが撃ち抜かれているか、残っているかが、それぞれ半角アルファベットの "o" と "x" で示されます。
 # 下図では、1, 3, 4, 5, 7, 9 のパネルが撃ち抜かれているので、期待される出力はそれらの合計である 29 となります。
 
-num = input().split(' ')
-ret = [[0 for i in range(int(num[1]))] for j in range(int(num[0]))]
+h, w = map(int, input().split(' '))
+ret = [[0 for i in range(w)] for j in range(h)]
 
-for i in range(int(num[0])):
+for i in range(h):
     panels = input()
     for j, panel in enumerate(panels):
-        if panel == "o":
-            ret[i][j] = 1
-        else:
-            ret[i][j] = 0
+        ret[i][j] = 1 if panel == "o" else 0
 
 total = 0
-for i in range(int(num[0])):
+for i in range(h):
     points = input().split(' ')
     for j, point in enumerate(points):
         total += int(point) * ret[i][j]

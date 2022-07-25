@@ -11,13 +11,12 @@ import re
 
 tellno = input()
 tellno = re.sub("\-","",tellno)
-tell_len = len(tellno)
-
 total_distance = 0
-for i in range(tell_len):
-    if tellno[i] == "0":
+
+for number in tellno:
+    if number == "0":
         total_distance += 12 * 2
     else:
-        total_distance += (int(tellno[i]) + 2) * 2
+        total_distance += (int(number) + 2) * 2
 
 print(total_distance)

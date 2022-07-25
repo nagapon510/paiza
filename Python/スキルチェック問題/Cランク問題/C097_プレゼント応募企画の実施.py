@@ -12,14 +12,14 @@
 # 入力例 1 の場合、応募者の人数は 5 人なので、5 人の当選情報を出力します。
 # プレゼント A の当選者は、2 の倍数番目の応募者で、プレゼント B の当選者は 4 の倍数の当選者なので、2 番目の応募者は A、4 番目の応募者は AB となり、それ以外の応募者は N になります。
 
-nums = input().split(' ')
+n, x, y = map(int, input().split(' '))
 
-for i in range(int(nums[0])):
-    if ((i + 1) % int(nums[1]) == 0 and i + 1 >= int(nums[1])) and ((i + 1) % int(nums[2]) == 0 and i + 1 >= int(nums[2])):
-        print("AB")
-    elif (i + 1) % int(nums[1]) == 0 and i + 1 >= int(nums[1]):
-        print("A")
-    elif (i + 1) % int(nums[2]) == 0 and i + 1 >= int(nums[2]):
-        print("B")
-    else:
-        print("N")
+for i in range(1, n + 1):
+    present = ""
+    if i % x == 0:
+        present += "A"
+    if i % y == 0:
+        present += "B"
+    if present == "":
+        present += "N"
+    print(present)

@@ -24,9 +24,7 @@ inputword = input()
 srtpwd = sorted(pwd)
 srtword = sorted(inputword)
 
-if pwd == inputword:
-    print("NO")
-elif srtpwd == srtword:
+if srtpwd == srtword and pwd != inputword:
     print("YES")
 else:
     print("NO")

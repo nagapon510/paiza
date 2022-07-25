@@ -11,7 +11,10 @@
 # 
 # 2文字列が入力されるので、これを Leet に変換して出力するプログラムを書いてください。
 
-# replaceの記載に変更
-bfr = input()
-aft = bfr.replace('A', '4').replace('E', '3').replace('G', '6').replace('I', '1').replace('O', '0').replace('S', '5').replace('Z', '2')
-print(aft)
+leetdic = {'A':'4', 'E':'3', 'G':'6', 'I':'1', 'O':'0', 'S':'5', 'Z':'2'}
+
+# replaceの記載に変更⇒ReplaceのLoopに変更
+s = input()
+for key, str in leetdic.items():
+    s = s.replace(key, str)
+print(s)
