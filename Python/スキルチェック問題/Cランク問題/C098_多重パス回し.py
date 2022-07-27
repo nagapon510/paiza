@@ -10,19 +10,16 @@
 # 下図は入力例 1 の様子を表しています。
 
 n = int(input())
-balls = []
-for i in range(n):
-    balls.append(int(input()))
+balls = [int(input()) for i in range(n)] #リスト内包表記に変更
 
 m = int(input())
 for i in range(m):
-    passturn = input().split(' ')
-    if int(passturn[2]) > balls[int(passturn[0])-1]:
-        balls[int(passturn[1])-1] += balls[int(passturn[0])-1]
-        balls[int(passturn[0])-1] = 0
+    source, destination, quantity = map(int,input().split(' '))
+    if quantity > balls[source-1]:
+        balls[destination-1] += balls[source-1]
     else:
-        balls[int(passturn[1])-1] += int(passturn[2])
-        balls[int(passturn[0])-1] -= int(passturn[2])
+        balls[destination-1] += quantity
+    balls[source-1] = max(balls[source-1] - quantity, 0)
 
 for ball in balls:
     print(ball)
