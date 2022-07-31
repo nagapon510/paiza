@@ -13,10 +13,13 @@
 # 5
 # と出力するプログラムを作成してください。
 
+HOLIDAYS = 7
+CHANSE_OF_RAIN = 30
+
 day = 0
-for i in range(7):
+for i in range(HOLIDAYS):
     num = int(input())
-    if num <= 30:
+    if num <= CHANSE_OF_RAIN:
         day += 1
 
 print(day)

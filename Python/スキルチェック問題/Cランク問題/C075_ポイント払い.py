@@ -11,11 +11,11 @@
 # ただし、途中でカード残高とポイントの両方が運賃を下回ることはありません。
 # 入力例 1 は以下のようになります。
 
-num = input().split(' ')
-balance = int(num[0])
+n, m = map(int, input().split(' '))
+balance = n
 point = 0
 
-for i in range(int(num[1])):
+for i in range(m):
     fare = int(input())
     if point >= fare:
         point -= fare

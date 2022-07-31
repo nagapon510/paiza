@@ -12,11 +12,11 @@
 # 1 枚になった垂れ幕部分の面積を計算してください。
 # 例えば、入力例 1 では以下のように計算できます。
 
-nums = input().split(' ')
+n, d = map(int, input().split(' '))
 
-width = int(nums[1])
-for i in range(int(nums[0])-1):
-    width +=  int(nums[1]) - int(input())
+width = d
+for i in range(n-1):
+    width +=  d - int(input())
 
-vol = width * int(nums[1])
+vol = width * d
 print(vol)

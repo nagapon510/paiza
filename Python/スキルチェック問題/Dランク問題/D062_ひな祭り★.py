@@ -11,17 +11,14 @@
 # CDE
 # FGHIJ
 
-nums = input().split(' ')
-first_step = int(nums[0])
-second_step = int(nums[0]) + int(nums[1])
-third_step = int(nums[0]) + int(nums[1]) + int(nums[2])
+nums_str = input().split(' ')
+nums = list(map(int, nums_str))
 
-strs = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
-ret = []
+steps = []
+for i in range(3):
+    steps[i] = sum(nums[0:i+1])
 
-for i in range(10):
-    ret.append(strs[i])
-    if i + 1 == first_step or i + 1 == second_step or i + 1 == third_step:
-        ret.append("\n")
-
-print(''.join(ret))
+strs = "ABCDEFGHIJ"
+print(strs[0:steps[0]])
+print(strs[steps[0]:steps[1]])
+print(strs[steps[1]:steps[2]])

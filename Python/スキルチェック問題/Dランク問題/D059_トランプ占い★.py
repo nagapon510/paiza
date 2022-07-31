@@ -17,6 +17,4 @@
 result = input().split(' ')
 if result[0] == "J" and result[1] == "J":
     result[1] = "Q"
-    print(' '.join(result))
-else:
-    print(' '.join(result))
+print(' '.join(result))

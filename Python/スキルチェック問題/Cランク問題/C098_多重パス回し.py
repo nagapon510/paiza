@@ -15,11 +15,10 @@ balls = [int(input()) for i in range(n)] #リスト内包表記に変更
 m = int(input())
 for i in range(m):
     source, destination, quantity = map(int,input().split(' '))
-    if quantity > balls[source-1]:
-        balls[destination-1] += balls[source-1]
-    else:
-        balls[destination-1] += quantity
+    balls_before = balls[source-1]
     balls[source-1] = max(balls[source-1] - quantity, 0)
+    balls_diff = balls_before - balls[source-1]
+    balls[destination-1] += balls_diff
 
 for ball in balls:
     print(ball)

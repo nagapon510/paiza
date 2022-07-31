@@ -23,11 +23,11 @@
 # 31
 # と出力すると正答となります。
 
-taizai = []
+sojourn_time = []
 days = int(input())
 for i in range(days):
-    times = input().split(' ')
-    taizai.append(int(times[0]) + int(times[1]) + (24 - int(times[2])))
+    times_1st, times_2nd, times_3rd = map(int, input().split(' '))
+    sojourn_time.append(times_1st + times_2nd + (24 - times_3rd))
 
-print(min(taizai))
-print(max(taizai))
+print(min(sojourn_time))
+print(max(sojourn_time))
